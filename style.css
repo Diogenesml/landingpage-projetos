@@ -26,6 +26,7 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  transition: background 0.3s ease;
 }
 
 body * {
@@ -49,6 +50,7 @@ body * {
 #profile img {
   width: 112px;
   margin: auto;
+  border-radius: 50%;
 }
 
 #profile p {
@@ -58,38 +60,25 @@ body * {
   margin-top: 8px;
 }
 
-#switch {
+/* ---------- Botão de alternância de tema ---------- */
+#theme-toggle {
   position: relative;
-  width: 64px;
-  margin: 4px auto;
-  
-}
-
-#switch button {
-    width: 32px;
-    height: 32px;
-    background: #ffff var(--switch-bg-url) no-repeat center;
-    border: 0;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 1;
-    transform: translateY(-50%);
-
-    animation: slide-back 0.2s;
-}
-
-.light #switch button {
-  animation: slide-in 0.4s forwards;
-}
-
-#switch button:hover {
-  outline: 4px solid var(--highlight-color);
-}
-
-#switch span {
   display: block;
+  width: 64px;
+  height: 32px;
+  margin: 4px auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#theme-toggle .track {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   width: 64px;
   height: 24px;
   background: var(--surface-color);
@@ -97,6 +86,33 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
+}
+
+#theme-toggle .knob {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  background: #fff var(--switch-bg-url) no-repeat center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
+}
+
+.light #theme-toggle .knob {
+  animation: slide-in 0.4s forwards;
+}
+
+#theme-toggle:hover .knob,
+#theme-toggle:focus-visible .knob {
+  outline: 4px solid var(--highlight-color);
+}
+
+#theme-toggle:focus-visible {
+  outline: none;
 }
 
 ul {
@@ -111,12 +127,10 @@ ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 16px 24px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
-
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
@@ -129,12 +143,15 @@ ul li a:hover {
   border: 1.5px solid var(--text-color);
 }
 
+ul li a:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
 #social-links {
   display: flex;
   justify-content: center;
-
   padding: 24px 0;
-
   font-size: 24px;
 }
 
@@ -143,7 +160,6 @@ ul li a:hover {
   align-items: center;
   justify-content: center;
   padding: 16px;
-
   transition: background 0.2s;
   border-radius: 50%;
 }
@@ -152,8 +168,12 @@ ul li a:hover {
   background: var(--highlight-color);
 }
 
+#social-links a:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
 
-/*animações*/
+/* animações */
 @keyframes slide-in {
   from {
     left: 0;
@@ -169,5 +189,22 @@ ul li a:hover {
   }
   to {
     left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #theme-toggle .knob {
+    animation: none;
+  }
+
+  .light #theme-toggle .knob {
+    left: 50%;
+    animation: none;
+  }
+
+  body,
+  ul li a,
+  #social-links a {
+    transition: none;
   }
 }

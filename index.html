@@ -1,82 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Diógenes Links — página com os principais projetos e redes sociais de Diógenes Moreira." />
+  <meta property="og:title" content="Diógenes Links" />
+  <meta property="og:description" content="Confira os projetos e redes sociais de Diógenes Moreira." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <title>Diógenes Links</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="container">
+    <header id="profile">
+      <img src="assets/avatar.png" alt="Foto de Diógenes" />
+      <p>@diogenes_ml</p>
+    </header>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DiógenesLinks</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="container">
-      <div id="profile">
-        <img src="assets/avatar.png" alt="Foto de diógenes" />
-        <p>@diogenes_ml</p>
-      </div>
+    <button
+      type="button"
+      id="theme-toggle"
+      aria-pressed="false"
+      aria-label="Alternar entre tema claro e escuro"
+    >
+      <span class="knob"></span>
+      <span class="track"></span>
+    </button>
 
-      <div id="switch" onclick="toggleMode()">
-        <button></button>
-        <span></span>
-      </div>
-
+    <nav aria-label="Links de projetos">
       <ul>
         <li>
-          <a href="https://diogenesml.github.io/" target="_blank">Sobre Mim</a>
+          <a href="https://diogenesml.github.io/" target="_blank" rel="noopener noreferrer">Sobre Mim</a>
         </li>
-
         <li>
-          <a href="http://127.0.0.1:5501/calculadora.html" target="_blank"
-            >Projeto Calculadora</a
-          >
+          <a href="https://diogenesml.github.io/Calculadora/calculadora.html" target="_blank" rel="noopener noreferrer">Projeto Calculadora</a>
         </li>
-
         <li>
-          <a
-            href="https://diogenesml.github.io/projeto-supernatural/"
-            target="_blank"
-            >Projeto Supernatural</a
-          >
+          <a href="https://diogenesml.github.io/projeto-supernatural/" target="_blank" rel="noopener noreferrer">Projeto Supernatural</a>
         </li>
-
         <li>
-          <a href="https://github.com/Diogenesml" target="_blank"
-            >Ver meu portfólio</a
-          >
+          <a href="https://github.com/Diogenesml" target="_blank" rel="noopener noreferrer">Ver meu portfólio</a>
         </li>
       </ul>
-      <div id="social-links">
-        <a href="https://github.com/Diogenesml" target="_blank">
-          <ion-icon name="logo-github"></ion-icon>
-        </a>
+    </nav>
 
-        <a href="https://instagram.com/diogenes_ml/ " target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
+    <footer id="social-links">
+      <a href="https://github.com/Diogenesml" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Diógenes">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="https://instagram.com/diogenes_ml/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Diógenes">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      <a href="https://linkedin.com/in/diógenes-moreira-legal-ab8051223" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Diógenes">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+    </footer>
+  </main>
 
-        <a
-          href="https://linkedin.com/in/diógenes-moreira-legal-ab8051223"
-          target="_blank"
-        >
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a>
-      </div>
-    </div>
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
-    <script src="script.js"></script>
-  </body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
